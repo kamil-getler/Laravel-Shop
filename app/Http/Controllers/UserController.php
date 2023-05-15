@@ -12,7 +12,7 @@ class UserController extends Controller
     public function index(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
 
     {
-        return view('users.index', ['users' => User::all()]);
+        return view('users.index', ['users' => User::paginate(3)]);
     }
 }
 
