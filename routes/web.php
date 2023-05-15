@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::delete('/users/{id}', [\App\Http\Controllers\UserController::class, 'destroy'])->middleware ( middleware: 'auth');
 Route::get('/users/list', [\App\Http\Controllers\UserController::class, 'index'])->middleware ( middleware: 'auth');
 Route::get('/hello', [HelloController::class, 'show']);
 

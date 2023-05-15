@@ -1,19 +1,69 @@
 <?php
-
 namespace App\Http\Controllers;
-
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Foundation\Application;
 use App\Models\User;
-
+use Illuminate\Http\Request;
 class UserController extends Controller
 {
-    public function index(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
+     */
+    public function index()//: Factory|View|Application
     {
-        return view('users.index', ['users' => User::paginate(3)]);
+        return view('users.index', [
+            'users' => User::paginate(3)
+        ]);
+    }
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        //
+    }
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+    }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+
+    public function destroy(string $id)
+    {
+        $flight = User::find($id);
+        $flight->delete();
+        return response()->json([
+            'status' => 'success'
+        ]);
     }
 }
-
 
