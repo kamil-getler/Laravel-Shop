@@ -56,6 +56,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/users/list">Uzytkownicy</a>
+                                    <a class="dropdown-item" href="{{route('products.index')}}">Produkty</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -77,14 +78,11 @@
             @yield('content')
         </main>
     </div>
-
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    {{-- @vite
-        <script src="/@vite/client"></script>
-        <script src="{{ vite_asset('resources/js/app.js') }}"></script> --}}
+    @vite(['resources/sass/app.scss', 'resources/js/app.js','resources/js/delete.js',])
     <script type="text/javascript">
         @yield('javascript')
     </script>
+    @yield('js-files')
 
 </body>
 </html>

@@ -16,6 +16,7 @@
     "dependencies": {
         "browser-sync": "^2.29.1",
         "browser-sync-webpack-plugin": "^2.3.0",
-        "jquery": "^3.7.0"
+        "jquery": "^3.7.0",
+        "sweetalert2": "^11.4.8"
     }
 }

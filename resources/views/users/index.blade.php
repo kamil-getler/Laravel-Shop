@@ -1,4 +1,5 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.9/dist/sweetalert2.min.js"></script>
 
 @extends('layouts.app')
 
@@ -37,22 +38,11 @@
     </div>
 @endsection
 @section('javascript')
-    $(function() {
-    $('.delete').click(function() {
-    $.ajax({
-    method: "DELETE",
-    url: "http://shop.test/users/" + $(this).data("id")
-    // data: { id: $(this).data("id") }
-    })
-    .done(function(response) {
-     //window.location.reload();
-    })
-    .fail(function (response) {
-    console.log(response.responseText);
-    alert("ERROR");
-    });
-   });
-   });
+    const deleteUrl = "{{ url('users') }}/";
+@endsection
+
+@section('js-files')
+    <script src="{{ asset('js/delete.js') }}"></script>
 @endsection
 
 
