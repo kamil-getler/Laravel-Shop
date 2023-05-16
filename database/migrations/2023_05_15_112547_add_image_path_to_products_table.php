@@ -8,21 +8,25 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->string( 'image_path',150)->after('id')->nullable();
+            $table->string('image_path', 150)->after('id')->nullable();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dopColumn(columns:'image_path');
+            $table->dropColumn('image_path');
         });
     }
 };
