@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\ProductCategory;
 use App\Models\Product;
 use Exception;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use App\Models\ProductCategory;
 
 class ProductController extends Controller
 {
